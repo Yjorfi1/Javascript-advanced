@@ -5,6 +5,7 @@ function slaOpNaam() {
     console.log('slaOpNaam() aangeroepen');
     
     // TODO: Haal naam uit input veld
+    
     const naam = /* jouw code hier */
     
     // TODO: Check of naam niet leeg is
