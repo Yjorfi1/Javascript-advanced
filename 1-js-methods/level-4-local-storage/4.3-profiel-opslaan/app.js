@@ -3,25 +3,26 @@ console.log('🚀 Opdracht 4.3: Profiel Opslaan');
 
 function slaProfielOp() {
     // TODO: Haal alle waarden uit formulier
-    const naam = /* jouw code hier */;
-    const email = /* jouw code hier */;
-    const leeftijd = /* jouw code hier */;
-    const kleur = /* jouw code hier */;
+    const naam = document.getElementById('naam');
+    const email = document.getElementById('email');
+;
+    const leeftijd =document.getElementById('leeftijd');
+    const kleur = document.getElementById('kleur');
     
     // TODO: Valideer verplichte velden
-    if (/* jouw code hier - check naam en email */) {
+    if (!naam === '' && !email === '') {
         alert('Naam en email zijn verplicht!');
         return;
     }
     
     // TODO: Sla elk veld apart op in localStorage
-    localStorage.setItem('profiel-naam', /* jouw code hier */);
-    localStorage.setItem('profiel-email', /* jouw code hier */);
-    localStorage.setItem('profiel-leeftijd', /* jouw code hier */);
-    localStorage.setItem('profiel-kleur', /* jouw code hier */);
+    localStorage.setItem('profiel-naam', naam.value);
+    localStorage.setItem('profiel-email', email.value);
+    localStorage.setItem('profiel-leeftijd', leeftijd.value);
+    localStorage.setItem('profiel-kleur', kleur.value);
     
     // TODO: Sla ook opslag datum op
-    localStorage.setItem('profiel-opgeslagen', /* jouw code hier - gebruik new Date() */);
+    localStorage.setItem('profiel-opgeslagen', new Date());
     
     alert('Profiel opgeslagen!');
     toonProfiel();
@@ -29,26 +30,26 @@ function slaProfielOp() {
 
 function laadProfiel() {
     // TODO: Haal alle waarden op uit localStorage
-    const naam = /* jouw code hier */;
-    const email = /* jouw code hier */;
-    const leeftijd = /* jouw code hier */;
-    const kleur = /* jouw code hier */;
+    const naam = localStorage.setitem('profiel-naam');
+    const email = localStorage.setitem('profiel-email');
+    const leeftijd = localStorage.setitem('profiel-leeftijd');
+    const kleur = localStorage.setitem('profiel-kleur');
     
     // TODO: Vul formulier als data bestaat
-    if (naam) {
-        document.getElementById('naam').value = /* jouw code hier */;
+  if (naam) {
+        document.getElementById('naam').value = naam;
     }
     
     if (email) {
-        document.getElementById('email').value = /* jouw code hier */;
+        document.getElementById('email').value = email;
     }
     
     if (leeftijd) {
-        document.getElementById('leeftijd').value = /* jouw code hier */;
+        document.getElementById('leeftijd').value = leeftijd;
     }
     
     if (kleur) {
-        document.getElementById('kleur').value = /* jouw code hier */;
+        document.getElementById('kleur').value = kleur;
     }
 }
 
@@ -56,19 +57,19 @@ function toonProfiel() {
     const container = document.getElementById('profiel-weergave');
     
     // TODO: Haal alle opgeslagen waarden op
-    const naam = /* jouw code hier */;
-    const email = /* jouw code hier */;
-    const leeftijd = /* jouw code hier */;
-    const kleur = /* jouw code hier */;
-    const opgeslagenOp = /* jouw code hier */;
+    const naam =  localStorage.getItem('profiel-naam');
+    const email = localStorage.getItem('profiel-email');
+    const leeftijd = localStorage.getItem('profiel-leeftijd');
+    const kleur = localStorage.getItem('profiel-kleur');
+    const opgeslagenOp = localStorage.getItem('profiel-opgeslagen');
     
     // TODO: Check of er profiel data is
-    if (/* jouw code hier - check of naam bestaat */) {
+    if (naam && email) {
         // TODO: Toon profiel gegevens
         container.innerHTML = `
             <h3>Opgeslagen Profiel:</h3>
-            <p><strong>Naam:</strong> ${/* jouw code hier */}</p>
-            <p><strong>Email:</strong> ${/* jouw code hier */}</p>
+            <p><strong>Naam:</strong> ${naam}}</p>
+            <p><strong>Email:</strong> ${email}</p>
             <p><strong>Leeftijd:</strong> ${leeftijd || 'Niet ingevuld'}</p>
             <p><strong>Favoriete kleur:</strong> ${kleur || 'Niet gekozen'}</p>
             <p><strong>Opgeslagen op:</strong> ${opgeslagenOp || 'Onbekend'}</p>
@@ -81,11 +82,11 @@ function toonProfiel() {
 function wisProfiel() {
     if (confirm('Weet je zeker dat je je profiel wilt wissen?')) {
         // TODO: Verwijder alle profiel items uit localStorage
-        localStorage.removeItem(/* jouw code hier - 'profiel-naam' */);
-        localStorage.removeItem(/* jouw code hier - 'profiel-email' */);
-        localStorage.removeItem(/* jouw code hier - 'profiel-leeftijd' */);
-        localStorage.removeItem(/* jouw code hier - 'profiel-kleur' */);
-        localStorage.removeItem(/* jouw code hier - 'profiel-opgeslagen' */);
+        localStorage.removeItem(naam);
+        localStorage.removeItem(email);
+        localStorage.removeItem(leeftijd);
+        localStorage.removeItem(kleur);
+        localStorage.removeItem(opgeslagenOp);
         
         // TODO: Maak formulier leeg
         document.getElementById('naam').value = '';
@@ -100,7 +101,7 @@ function wisProfiel() {
 
 // TODO: Initialisatie
 function init() {
-    /* jouw code hier - laad profiel en toon het */;
+    laadProfiel();
 }
 
 /* jouw code hier - roep init() aan bij DOMContentLoaded */;
