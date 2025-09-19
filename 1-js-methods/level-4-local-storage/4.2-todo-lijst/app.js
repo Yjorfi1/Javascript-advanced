@@ -77,7 +77,8 @@ function wisAlleTaken() {
 }
 
 // TODO: Initialisatie bij pagina laden
-window.onload = function() {
+document.addEventListener('DOMContentLoaded' , () =>  {
     laadTaken();
     toonTaken();
-}
+
+});
