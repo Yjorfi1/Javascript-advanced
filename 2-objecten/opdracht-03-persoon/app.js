@@ -1,18 +1,42 @@
 // Stap 1
+const person = {
+    name: String("persoon"),
+    age: Number("100"),
+    birthdate: String("1 januari 2000"),
+    sex: String("man"),
+    alive : Boolean(true),
+    hobbies: ["bank beroven, slapen, eten "],   
+  
+  changeName: function(newName) {
+    this.name = newName;
+    return this.name;
+  },
+    
+  changeStatus: function(newStatus) {
+    this.status = newStatus;
+    return this.status;
+  },
+addhobby: function(newHobby) {
+  this.hobbies.push(newHobby);
+  return this.hobbies;
+}}
 
-// Maak een persoon object waar je allemaal eigenschappen van een persoon in kunt opslaan en tonen op het scherm.
 
-// Het object moet de volgende properties bevatten:
+person.changeName('hallooo')
+person.changeStatus('false')
+person.addhobby(' huilen')
 
-//     Naam: de naam van de persoon (string)
-//     Leeftijd: de leeftijd van de persoon (number)
-//     Geboortedatum: de geboortedatum van de persoon (string)
-//     Geslacht: het geslacht van de persoon (string)
-//     In leven: geef aan of de persoon nog leeft (boolean)
-//     Hobby’s: 4 hobby’s van de persoon (array)
+document.querySelector('.output').innerHTML = `
+<p>${person.name}<p>
+<p>${person.age}<p>
+<p>${person.birthdate}<p>
+<p>${person.sex}<p>
+<p>${person.status}<p>
+<p>${person.hobbies}<p>
 
-// Toon elke property op het scherm door het in een p-tag te plaatsen. Hiervoor gebruik je de div-tag van de vorige opdracht.
-// Stap 2:
+`;
+
+
 
 // Het object moet ook de volgende methods bevatten:
 
@@ -23,3 +47,4 @@
 // Toon de wijzigingen op het scherm.
 
 // Gebruik geen arrow function in een object!
+
