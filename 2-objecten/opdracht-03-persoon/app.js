@@ -22,7 +22,7 @@ addhobby: function(newHobby) {
 }}
 
 
-person.changeName('hallooo')
+person.changeName('een naam')
 person.changeStatus('false')
 person.addhobby(' huilen')
 
