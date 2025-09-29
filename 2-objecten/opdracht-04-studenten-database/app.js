@@ -67,22 +67,13 @@ studentlist.innerHTML += `<article class="actief">
 function toonActieveStudenten() {
   
   const actieveStudenten = students.filter(student => student.actief === true);
-  const studentlist = document.getElementById('studenten-lijst')
-  for (let student of students) { 
-studentlist.innerHTML += `<article class="actief"> 
-      <strong>${student.naam}</strong> (20 jaar)<br>
-      📚 ${student.studie}<br>
-      📊 Cijfer: ${student.cijfer} | Status: ${student.actief} 
-  </article>`
-  }
 }
 
 function toonTopStudenten() {
 
 
   // 1. Filter de students array op studenten met cijfer >= 8.0
-const smartstudents = students.filter(student => student.cijfer >= 8.0); { 
-     }
+const smartstudents = students.filter(students => students.cijfer >= 8.0);
 }
 // 🚀 START DE APPLICATIE - roep deze aan als de pagina laadt
 toonAlleStudenten();
