@@ -7,9 +7,9 @@ fetch('./birthday.json')
 .then((birthday) => {
 for (let birthdays of birthday){
     output.innerHTML += `
-    <p>Mens is ${birthdays.name}</p>
-    <p>${birthdays.name} is ${birthdays.age} jaar oud</p>
-<img src="${birthdays.image}" alt="foto" width="125">
+    <p class="name">Naam: ${birthdays.name}</p>
+    <p class="age">${birthdays.name} is ${birthdays.age} jaar oud</p>
+<img class="image" src="${birthdays.image}" alt="foto" width="125">
 
    
 `

@@ -1,19 +1,31 @@
 .output {
-    background-color: rgb(244, 187, 187);
-    color: rgb(172, 14, 14);
-    width: 200px;
-    height: 300x;
+    color: rgb(16, 39, 107);
+    background-color: rgb(222, 194, 242);
+    width: 20cm;
+    height: 45cm;
   padding: 5px 10px;
     cursor: pointer;
-    text-align: center;
    flex-basis: 50%;
    z-index: inherit;
-
+align-items: center;
+margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-color: black;
     
 }
+.image{
+  width: 200px;
+  height: 200px;
+  text-align: end;
+}
+
 body{
-    background-color: rgb(200, 146, 218);
+   background-color: rgb(210, 159, 210);
     
+}
+.image{
+  border-radius: 50%
 }
 button {
   padding: 5px 10px;
@@ -22,5 +34,7 @@ button {
    z-index: 5;
     position: relative;
     cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
       
 }
